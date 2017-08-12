@@ -1,7 +1,17 @@
 <!-- <md-toolbar> -->
-   <nav class="navbar1"> 
-  <a [routerLink]="['/home']" [routerLinkActive]="['router-link-active']" >Home</a>
-  <a [routerLink]="['/data-entry']" [routerLinkActive]="['router-link-active']" >Data Entry</a>
-  <a [routerLink]="['/prediction']" [routerLinkActive]="['router-link-active']" >Prediction</a>
-   </nav> 
+<nav class="navbar1">
+    <a [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Home</a>
+    <a [routerLink]="['/proposal-form']" [routerLinkActive]="['router-link-active']">Proposal Form</a>
+    <a [routerLink]="['/data-entry']" [routerLinkActive]="['router-link-active']" [hidden]="!loggedIn === true">Data Entry</a>
+    <a [routerLink]="['/prediction']" [routerLinkActive]="['router-link-active']" [hidden]="!loggedIn === true">Prediction</a>
+
+    <span class="fill-remaining-space"></span>
+
+    <a [routerLink]="['/login']" [routerLinkActive]="['router-link-active']" [hidden]="loggedIn === true">Login</a>
+    <a [routerLinkActive]="['router-link-active']" [hidden]="!loggedIn === true" (click)="logout()" >Logout</a>
+
+    <!-- <a [hidden]="loggedIn===true" [routerLink]="['/login']" class="log" id="login">Log In</a>
+    <a [hidden]="!loggedIn===true" (click)="logout()" class="log">Log Out</a> -->
+
+</nav>
 <!-- </md-toolbar> -->

@@ -1,5 +1,5 @@
 <md-card>
-  <form [formGroup]="dataForm">
+  <form [formGroup]="dataForm" (ngSubmit)="submit(dataForm.value)" >
     <md-card>
       <h4>Product Info</h4>
       <div class="row">
@@ -284,6 +284,14 @@
         </div>
         <div class="col-md-1">
           <md-input-container><input mdInput formControlName="Medical_History_41" placeholder="Med_History_41"></md-input-container>
+        </div>
+      </div>
+    </md-card>
+    <br>
+    <md-card>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-5">
+          <button md-raised-button type="submit">Submit Proposal Data</button>
         </div>
       </div>
     </md-card>
