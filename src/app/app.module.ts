@@ -7,6 +7,8 @@ import { MaterialModule } from '@angular/material';
 
 import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
+import { AwsService } from './services/aws/aws.service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DataEntryComponent } from './data-entry/data-entry.component';
@@ -32,7 +34,7 @@ const routes: Routes = [
     BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes),
     MdButtonModule, MdCheckboxModule, ReactiveFormsModule, MaterialModule
   ],
-  providers: [],
+  providers: [ AwsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
