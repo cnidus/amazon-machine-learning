@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { AwsService } from '../services/aws/aws.service';
+import { DataFormService } from '../services/data-form/data-form.service';
 
 @Component({
   selector: 'app-data-entry',
@@ -20,13 +21,12 @@ export class DataEntryComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private AWS: AwsService
+    private AWS: AwsService,
+    private ds: DataFormService
   ) { }
 
   ngOnInit() {
-    this.dataForm = this.fb.group({
-      f1: []
-    })
+    this.dataForm = this.fb.group(this.ds.getDataEntryForm())
   }
 
   submit() {
