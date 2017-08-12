@@ -1,0 +1,26 @@
+<md-card>
+  <form [formGroup]="dataForm">
+    <div class="row">
+      <div class="col-md-2">
+        <md-input-container><input mdInput formControlName="f1" placeholder="Favorite food"></md-input-container>
+      </div>
+      <div class="col-md-2">
+        <md-input-container><input mdInput formControlName="f1" placeholder="Favorite food"></md-input-container>
+      </div>
+      <div class="col-md-2">
+        <md-input-container><input mdInput formControlName="f1" placeholder="Favorite food"></md-input-container>
+      </div>
+      <div class="col-md-2">
+        <md-input-container><input mdInput formControlName="f1" placeholder="Favorite food"></md-input-container>
+      </div>
+      <div class="col-md-2">
+        <md-input-container><input mdInput formControlName="f1" placeholder="Favorite food"></md-input-container>
+      </div>
+      <div class="col-md-2">
+        <md-select placeholder="Favorite food">
+          <md-option *ngFor="let food of foods" [value]="food.value">{{ food.viewValue }}</md-option>
+        </md-select>
+      </div>
+    </div>
+  </form>
+</md-card>
