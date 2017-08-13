@@ -13,7 +13,7 @@ export class PredictionComponent implements OnInit {
 
   ngOnInit() {
     AwsService.authResult.next(this.aws.isAuthenticated())
-    console.log(JSON.parse(localStorage.getItem('prediction')))
+    // console.log(JSON.parse(localStorage.getItem('prediction')))
     this.visualData = JSON.parse(localStorage.getItem('prediction'))
   }
 

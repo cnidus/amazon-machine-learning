@@ -36,7 +36,7 @@ export class DataEntryComponent implements OnInit {
     
     // console.log(dataForm)
     this.AWS.predict(dataForm).subscribe((data)=>{
-      console.log(data)
+      // console.log(data)
       localStorage.setItem('prediction', JSON.stringify(data))
       // this.rt.navigate(['prediction', data])
       this.rt.navigateByUrl('/prediction', {} )

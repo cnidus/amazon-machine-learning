@@ -23,7 +23,7 @@ export class AuthComponent implements OnInit {
 
     console.log(pParams)
     localStorage.setItem('authParams', JSON.stringify(pParams));
-    this.aws.getAWS()
+    AwsService.authResult.next(this.aws.isAuthenticated())
     setTimeout(()=>{
       this.rt.navigate(['data-entry'])
     }, 3000)
