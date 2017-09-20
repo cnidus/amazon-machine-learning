@@ -8,7 +8,8 @@
     "build": "ng build",
     "build-ml": "ng build --environment=ml --target=production",
     "pushtos3": "aws s3 sync ./dist s3://octank-ml.prabhatsharma.com --acl public-read",
-    "deploy-ml": "npm run build-ml && npm run pushtos3",
+    "deploy-ml": "npm run build-ml && npm run pushtos3 && npm run clear-cdn",
+    "clear-cdn": "aws cloudfront create-invalidation --distribution-id=E1GQ2RYFATFH8W --paths=/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

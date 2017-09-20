@@ -16,7 +16,7 @@ export class AwsService {
 
   isAuthenticated() {
     let authParams = JSON.parse(localStorage.getItem('authParams'))
-    if(authParams && (authParams.google  || authParams.facebook)){
+    if (authParams && (authParams.google || authParams.facebook)) {
       AwsService.authResult.next(true);
       return true;
     } else {
@@ -29,7 +29,7 @@ export class AwsService {
     return AWS;
   }
 
-  setAWS(){
+  setAWS() {
     let Logins;
     let storageToken = JSON.parse(localStorage.getItem('authParams'))
     if (storageToken && storageToken.google) {
