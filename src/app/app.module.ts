@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '@angular/material';
+import { MdInputModule } from '@angular/material';
 
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MdButtonModule, MdCheckboxModule, MdCardModule } from '@angular/material';
 
 import { AwsService } from './services/aws/aws.service';
 import { DataFormService } from './services/data-form/data-form.service';
@@ -21,7 +21,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home' , pathMatch: 'full' }, 
+  { path: '', redirectTo: '/home' , pathMatch: 'full' },
   { path: 'auth/:authprovider', component: AuthComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
@@ -43,7 +43,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes),
-    MdButtonModule, MdCheckboxModule, ReactiveFormsModule, MaterialModule
+    MdButtonModule, MdCheckboxModule, ReactiveFormsModule, MdInputModule, MdCardModule
   ],
   providers: [ AwsService, DataFormService, RouteAuthService ],
   bootstrap: [AppComponent]
