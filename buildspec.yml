@@ -10,7 +10,7 @@ phases:
       - npm install -g @angular/cli
   build:
     commands:
-      - ng build
+      - ng build --environment=ml --target=production
   post_build:
     commands:
       - echo Build completed on `date`
