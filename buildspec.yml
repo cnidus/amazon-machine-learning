@@ -3,11 +3,11 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo nothing in the install step
-  pre_build:
-    commands:
       - npm install
       - npm install -g @angular/cli
+  pre_build:
+    commands:
+      - echo nothing to pre-build
   build:
     commands:
       - ng build --environment=ml --target=production
