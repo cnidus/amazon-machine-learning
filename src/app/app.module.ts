@@ -16,7 +16,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DataEntryComponent } from './data-entry/data-entry.component';
 import { PredictionComponent } from './prediction/prediction.component';
 import { HomeComponent } from './home/home.component';
-import { ProposalFormComponent } from './proposal-form/proposal-form.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './login/login.component';
 
@@ -26,7 +25,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'data-entry', component: DataEntryComponent, canActivate: [RouteAuthService] },
-  { path: 'proposal-form', component: ProposalFormComponent },
   { path: 'prediction', component: PredictionComponent, canActivate: [RouteAuthService]  },
 ]
 
@@ -37,7 +35,6 @@ const routes: Routes = [
     DataEntryComponent,
     PredictionComponent,
     HomeComponent,
-    ProposalFormComponent,
     AuthComponent,
     LoginComponent
   ],

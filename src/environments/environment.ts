@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  login: 'https://f9psibjib4.execute-api.us-east-1.amazonaws.com/app/auth/signin'
+  login: 'https://hphixrnjn2.execute-api.us-east-1.amazonaws.com/dev/auth/signin'
 };

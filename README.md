@@ -1,6 +1,20 @@
-# PrudentialPredictor
+# Frac-vote-web Front End
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
+
+## Quick start
+  git clone https://github.com/cnidus/frac-vote-web.git
+  cd frac-vote-web
+  npm installchi
+
+Edit the auth details. This is based on https://github.com/cnidus/octank-lambda-auth. Deploy that first.
+  vi src/environments/environment.ml.ts
+  Replace the "login: <login url>" with your own string.
+
+Change the deployment parameters to match your environment.
+  vi package.json
+  Replace 'frac-voting' in "pushtos3" script with your s3 ID.
+  Replace 'E1KZNVNAWWOG9W' in "clear-cdn" script with your cloudfront distribution-id
 
 ## Development server
 

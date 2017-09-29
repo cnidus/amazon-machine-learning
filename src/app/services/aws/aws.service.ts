@@ -41,10 +41,10 @@ export class AwsService {
         'graph.facebook.com': storageToken.facebook.access_token
       }
     }
-
+    // Cognito Credential mapping
     AWS.config.region = 'us-east-1';
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-      IdentityPoolId: 'us-east-1:37561548-8d60-43db-a9e6-b2ca4a30c102',  // unauthenticated cognito Role
+      IdentityPoolId: 'us-east-1:b0453bc5-1210-48c0-a375-24fc84114a9c',  // unauthenticated cognito Role
       Logins: Logins
     })
   }
