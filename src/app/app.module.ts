@@ -14,7 +14,7 @@ import { RouteAuthService } from './services/route-auth/route-auth.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DataEntryComponent } from './data-entry/data-entry.component';
-import { PredictionComponent } from './prediction/prediction.component';
+// import { PredictionComponent } from './prediction/prediction.component';
 import { HomeComponent } from './home/home.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './login/login.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'data-entry', component: DataEntryComponent, canActivate: [RouteAuthService] },
-  { path: 'prediction', component: PredictionComponent, canActivate: [RouteAuthService]  },
+  // { path: 'prediction', component: PredictionComponent, canActivate: [RouteAuthService]  },
 ]
 
 @NgModule({
@@ -33,7 +33,7 @@ const routes: Routes = [
     AppComponent,
     NavbarComponent,
     DataEntryComponent,
-    PredictionComponent,
+//    PredictionComponent,
     HomeComponent,
     AuthComponent,
     LoginComponent
