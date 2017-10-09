@@ -1,5 +1,26 @@
-[
-	{"name": "safe", "votes": 15, "color": "#00FF00"},
-	{"name": "none", "votes": 2, "color": "#CC00CC"},
-	{"name": "out", "votes": 5, "color": "#FF0000"}
+# VoteTotals = s3.Object()
+VoteTotals = [
+	{
+		"VideoID": "1506992170643-ej4cw8",
+		"VideoTitle": "Honest Trailers - The Bourne Trilogy.mp4",
+		"Votes": {
+			"unclear": 1,
+			"safe": 2,
+			"out": 1
+		}
+	},
 ]
+
+s3.Object(BUCKET_NAME, VOTES_TOTALS_FILE).put(Body=open(json.dumps(VoteTotals)))
+
+
+{
+	"1506992170643-ej4cw8": {
+		"VideoTitle": "Honest Trailers - The Bourne Trilogy.mp4",
+		"Votes": {
+			"unclear": 1,
+			"safe": 2,
+			"out": 1
+		}
+	},
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { AwsService } from '../services/aws/aws.service';
 
 @Component({

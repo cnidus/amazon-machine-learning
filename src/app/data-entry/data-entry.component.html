@@ -1,18 +1,56 @@
-<p>Hello Wallace!</p>
-  <div id="video-area" style="width:40%">
-    <video controls>
-      <source src="https://vote.frac.io/transcoded/Honest+Trailers+-+The+Bourne+Trilogy.mp4/transcoded-web.mp4" type="video/mp4">
-      <p>Your browser doesn't support HTML5 video. Here is a <a href="https://vote.frac.io/transcoded/Honest+Trailers+-+The+Bourne+Trilogy.mp4/transcoded-web.mp4">link to the video</a> instead.</p>
-    </video>
+<div class="container-fluid">
+  <!-- Player Row -->
+  <div class="row">
+    <div class="col-sm-12 embed-responsive embed-responsive-16by9">
+      <video width="100%" height="100%" controls id="videoDisplay" class="embed-responsive-item">
+        <source src={{Video.currentPath}} type="video/mp4">
+        <p>Your browser doesn't support HTML5 video. Here is a <a href={{Video.currentPath}}>link to the video</a> instead.</p>
+      </video>
+      <!-- <div class="fader" id="videoTitle">{{Video.currentTitle}}</div> -->
+    </div>
   </div>
-<md-card>
-  <form [formGroup]="dataForm" (ngSubmit)="submit(dataForm.value)" >
-    <md-card>
-      <div class="row">
-        <div class="col-md-4 col-md-offset-5">
-          <button md-raised-button type="submit">Submit Proposal Data</button>
-        </div>
+
+  <!-- Current playing + Votes -->
+  <div class="row">
+    <div class="col-xs-6">
+        <h3>Currently playing:</h3>
+        <p>{{Video.currentTitle}}</p>
+
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12 embed-responsive">
+        <h4>Votes</h4>
       </div>
-    </md-card>
-  </form>
-</md-card>
+      <div class="col-xs-2">
+        <img src="assets/thumbsup-sml.png" id="upvote" (click)="Vote.sendVote('safe')" />
+        <p class="UpVotes">{{Vote.currentUpVotes}}</p>
+      </div>
+      <div class="col-xs-2">
+        <img src="assets/thumbsdn-sml.png" id="dnvote" (click)="Vote.sendVote('out')" />
+      <p class="DnVotes">{{Vote.currentDnVotes}}</p>
+      </div>
+  </div>
+
+  <!-- Playlist row -->
+  <div class="col-sm-12 embed-responsive">
+      <ul class="list-group">
+          <h3>Playlist:</h3>
+          <li class="list-group-item" *ngFor="let playlistItem of Video.playlist; let i = index" (click)="Video.selectedVideo(i)">{{playlistItem.FileName}}</li>
+      </ul>
+  </div>
+
+</div>
+
+<!--
+<h3>VODList:</h3>
+<table>
+  <tbody *ngFor="let v of VODList">
+    <tr><td>{{v.InputFile}}</td><td>Herro preeze</td></tr>
+  </tbody>
+</table>
+
+{{VODList}}
+
+CachedTotals:
+{{votetotals}} -->
