@@ -29,7 +29,7 @@ export class AwsService {
   }
 
   setAWS() {
-    const IdentityPoolId:string = 'us-east-1:b0453bc5-1210-48c0-a375-24fc84114a9c';
+    const IdentityPoolId:string = 'us-east-1:b0453bc5-1210-48c0-a375-24fc84114a9c';   // unauthenticated cognito Role
     let Logins;
     let storageToken = JSON.parse(localStorage.getItem('authParams'))
 
@@ -45,7 +45,7 @@ export class AwsService {
     // Cognito Credential mapping
     AWS.config.region = 'us-east-1';
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-      IdentityPoolId: IdentityPoolId,  // unauthenticated cognito Role
+      IdentityPoolId: IdentityPoolId,
       Logins: Logins
     });
 

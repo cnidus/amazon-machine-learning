@@ -29,8 +29,8 @@ export class VideoService {
 
   appSetup(v:string) {
     this.videoElement = <HTMLVideoElement> document.getElementById(v);
-    this.currentPath = "https://vote.frac.io/transcoded/The+Italian+Job+(2003)+-+Trailer.mp4/transcoded-web.mp4";
-    this.currentTitle = "The Italian Job"
+    this.currentPath = "";
+    this.currentTitle = "";
     // window.setInterval(this.timerFired, 500);
     // console.log("Entered Video Service 'appSetup '");
   };

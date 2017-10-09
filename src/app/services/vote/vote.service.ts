@@ -9,9 +9,9 @@ import { VideoService } from '../video/video.service';
 
 @Injectable()
 export class VoteService {
-  public allvotes:any;
+  // public allvotes:any;
   public votes:any = {};
-  public ALLVOTETOTAL_ENDPOINT:string = "https://3u55ylts79.execute-api.us-east-1.amazonaws.com/api/GetAllVoteTotals";
+  // public ALLVOTETOTAL_ENDPOINT:string = "https://3u55ylts79.execute-api.us-east-1.amazonaws.com/api/GetAllVoteTotals";
   private VOTECAST_ENDPOINT:string = "https://3u55ylts79.execute-api.us-east-1.amazonaws.com/api/CastVote";
   private VOTETOTAL_ENDPOINT:string = "https://3u55ylts79.execute-api.us-east-1.amazonaws.com/api/GetVoteTotals";
   public currentUpVotes:string ="null";
@@ -28,16 +28,16 @@ export class VoteService {
     window.setInterval(this.timerFired, 500);
   };
 
-  getAllVoteTotals = () => {
-      this.http.get(this.ALLVOTETOTAL_ENDPOINT)
-          .map((res:Response) => res.json())
-          .subscribe(
-              data => {
-                  this.allvotes = data;
-                  console.log(this.allvotes);
-              }
-          );
-  };
+  // getAllVoteTotals = () => {
+  //     this.http.get(this.ALLVOTETOTAL_ENDPOINT)
+  //         .map((res:Response) => res.json())
+  //         .subscribe(
+  //             data => {
+  //                 this.allvotes = data;
+  //                 console.log(this.allvotes);
+  //             }
+  //         );
+  // };
 
   updateCurrentVotes(videoId:string) {
     this.http.get(this.VOTETOTAL_ENDPOINT + '/' + videoId)
